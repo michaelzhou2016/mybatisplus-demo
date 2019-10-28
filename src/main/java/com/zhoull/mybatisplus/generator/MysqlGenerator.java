@@ -53,19 +53,19 @@ public class MysqlGenerator {
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
 //        String projectPath = System.getProperty("user.dir");
-        String projectPath = "D:/zhouliliang0916";
+        String projectPath = "D:/Projects/zhouliliang1028";
         gc.setOutputDir(projectPath + "/mybatis-plus-sample-generator/src/main/java");
-        gc.setAuthor("charlie");
+        gc.setAuthor("zhouliliang");
         gc.setOpen(false);
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://47.101.33.86:3306/mybatisplus?useUnicode=true&serverTimezone=GMT&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://xx.xx.xx.xx:3306/guiyu_linesupplier?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&verifyServerCertificate=false&allowMultiQueries=true");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("1qazxsw2");
+        dsc.setPassword("123456");
         mpg.setDataSource(dsc);
 
         // 包配置
@@ -104,7 +104,7 @@ public class MysqlGenerator {
         strategy.setInclude(scanner("表名"));
 //        strategy.setSuperEntityColumns("id");
 //        strategy.setControllerMappingHyphenStyle(true);
-//        strategy.setTablePrefix(pc.getModuleName() + "_");
+        strategy.setTablePrefix("tb_");
         mpg.setStrategy(strategy);
         // 选择 freemarker 引擎需要指定如下加，注意 pom 依赖必须有！
         mpg.setTemplateEngine(new FreemarkerTemplateEngine());
